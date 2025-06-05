@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Review Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body> 
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <h1 class="logo"><em>The Reel Deal</em></h1>
+            </div>
+            <nav class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-container-item active"><a href="/homepage">Home</a></li>
+                    <li class="menu-container-item"><a href="/search">Search</a></li>
+                    <li class="menu-container-item"><a href="/review">Review</a></li>
+                    <li class="menu-container-item"><a href="settings">Profile</a></li>
+                    <li class="menu-container-item"><a href="/login">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1>Previous Movie Reviews</h1>
+    <% if (reviews && reviews.length > 0) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>User Name</th>
+                    <th>Review Score</th>
+                    <th>Review Text</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% reviews.forEach(function(review) { %>
+                    <tr>
+                        <td><%= review.movieName %></td>
+                        <td><%= review.userName %></td>
+                        <td><%= review.reviewScore %></td>
+                        <td><%= review.reviewText %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+
+
+    <% } else { %>
+        <p>No more reviews available.</p>
+        <button onclick="loadLess()">Previous Page</button>
+    <% } %>
+
+    <% if (reviews && reviews.length >= 5) { %>
+        <button onclick="loadLess()">Previous Page</button>
+        <button onclick="loadMore()">Next Page</button>
+    <% } %>
+
+    <div class="padding">  </div>
+
+    <script>
+        function loadMore() {
+            var currentPage = <%= currentPage %>;
+            window.location.href = '/allreviews?page=' + (currentPage + 1);
+        }
+        function loadLess() {
+            var currentPage = <%= currentPage %>;
+
+            if(currentPage !=0)
+            {
+                window.location.href = '/allreviews?page=' + (currentPage - 1);
+            } 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Document</title>
+
+
+    <style>
+
+         body {
+            font-family: 'Sen', sans-serif;
+            background-color:  #333;
+            margin: 0px;
+        }
+
+        .navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: relative; /* Add position relative */
+    z-index: 1; /* Add z-index */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    color:white;
+}
+
+.menu-container-item {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+
+
+        .container{
+            background-color: #151515;
+           min-height: calc(100vh - 50px);
+            color: white;
+        }
+
+        /* .content-container{
+            margin-left: 50px;
+        } */
+
+        .feature-content{
+            height: 50vh; 
+            padding: 50px;
+        }
+        .featured-title{
+            width: 300px;
+            margin: 30px 0px;
+        }
+
+        .featured-desc{
+            width: 500px;
+            margin: 30px 0px;
+        }
+
+        .featured-button{
+            background-color:black ;
+            color: white;
+            padding:10px ;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-weight: bold;
+        }
+
+        .movie-list-container{
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .movie-list-wrapper{
+            position: relative;
+        }
+
+        .movie-list{
+                display: flex;
+                align-items: center;
+                height: 300px;
+                color: white;
+
+            }
+
+        .movie-list-item{
+                margin-right: 30px;
+                position: relative;
+            }
+
+        .movie-list-item:hover .movie-list-item-img{
+            transform: scale(1.2);
+            margin: 0 30px;
+            opacity: 0.5;
+        }
+        .movie-list-item:hover .movie-list-item-title{
+            opacity: 1;
+        }
+
+        .movie-list-item:hover .movie-list-item-desc{
+            opacity: 1;
+        }
+
+        .movie-list-item:hover .movie-list-item-button{
+            opacity: 1;
+        }
+
+        .movie-list-item-img{
+            width: 270px;
+            height: 200px;
+            object-fit: cover;
+            transition: all 1s ease-in-out;
+            margin-top: 30px;
+        }
+        .logo{
+            color:white;
+        }
+
+        a{
+            color:white;
+        }
+
+        /* .movie-list-item-desc{
+            width: 200px;
+            margin: 20px;
+        } */
+
+        .movie-list-item-title{
+            background-color: rgb(46, 40, 40);
+            padding: 0 10px;
+            font: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 18%;
+            left: 15px;
+            opacity: 0;
+            transition: 1s all ease-in-out
+        }
+
+        .movie-list-item-desc{
+            background-color: rgb(46, 40, 40);
+            padding:10px;
+            font: 10px;
+            position: absolute;
+            top: 30%;
+            left: 40px;
+            width: 200px;
+            opacity: 0;
+            transition: 1s ease-in-out;
+        }
+
+        .movie-list-item-button{
+            background-color:black ;
+            color: white;
+            padding:10px ;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 100%;
+            opacity: 0;
+        }
+
+        .arrow{
+            font-size: 120px;
+            position: absolute;
+            top: 100px;
+            right: 0;
+            color: white;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.heading1{
+    margin: 20px;
+}
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="review-navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <h1 class="logo"><em>The Reel Deal</em></h1>
+            </div>
+
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-container-item active"><a href="/homepage">Home</a></li>
+                    <li class="menu-container-item"><a href="/search">Search</a></li>
+                    <li class="menu-container-item"><a href="/review">Review</a></li>
+                    <li class="menu-container-item"><a href="settings">Profile</a></li>
+                    <li class="menu-container-item"><a href="/login">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+         <div class="content-container">
+
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">CREATORS TOP RECOMENDATIONS</h1>
+                <div class="movie-list-wrapper">
+    
+                    <div class="movie-list">
+    
+                        <div class="movie-list-item">
+                           <img class="movie-list-item-img" src="images/m1.jpg" alt=""> 
+                           <span class="movie-list-item-title">The Shawshank Redemption</span>
+                           <p class="movie-list-item-desc">
+                            Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.
+                           </p>
+                           <button class="movie-list-item-button">
+                            <a href="review">Review Now</a>
+                        </button>
+                        </div>
+    
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/godfather.jpg" alt=""> 
+                            <span class="movie-list-item-title">The Godfather</span>
+                            <p class="movie-list-item-desc">Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger. </p>
+                            <button class="movie-list-item-button">
+                                <a href="review">Review Now</a>
+                            </button>
+                         </div>
+    
+                         <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/wolf1.jpg" alt=""> 
+                            <span class="movie-list-item-title">The Wolf of Wall Street</span>
+                            <p class="movie-list-item-desc">
+                                Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.                            </p>
+                                <button class="movie-list-item-button">
+                                    <a href="review">Review Now</a>
+                                </button>
+                         </div>
+    
+                         <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="images/once.jpg" alt=""> 
+                            <span class="movie-list-item-title">Once upon a time in Hollywood</span>
+                            <p class="movie-list-item-desc">
+                                A faded television actor and his stunt double strive to achieve fame and success in the final years of Hollywood's Golden Age in 1969 Los Angeles.                            </p>
+                                <button class="movie-list-item-button">
+                                    <a href="review">Review Now</a>
+                                </button>
+                                
+                         </div>
+    
+    
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </div>
+            </div>
+
+            <h1 class="heading1">ALL TIME CLASSIC</h1>
+
+             <div class="feature-content"
+             style="background:linear-gradient(to bottom,rgba(0,0,0,0),#151515), url(images/interstellar.png)";>
+
+        
+             <img class="featured-title" src="images/interstellar-logo.png" alt="">
+             <p class="featured-desc">When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.</p>
+             <button class="movie-list-item-button">
+                <a href="review">Review Now</a>
+            </button>
+         </div>  
+
+         <div class="movie-list-container">
+            <h1 class="movie-list-title">TOP RELEASES OF THIS YEAR</h1>
+            <div class="movie-list-wrapper">
+
+                <div class="movie-list">
+
+                    <div class="movie-list-item">
+                       <img class="movie-list-item-img" src="images/saltburn.jpeg" alt=""> 
+                       <span class="movie-list-item-title">Saltburn</span>
+                       <p class="movie-list-item-desc">
+                        A student at Oxford University finds himself drawn into the world of a charming and aristocratic classmate, who invites him to his eccentric family's sprawling estate for a summer never to be forgotten.                       </p>
+                       <button class="movie-list-item-button">
+                        <a href="review">Review Now</a>
+                    </button>                    </div>
+
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="images/opp.jpeg" alt=""> 
+                        <span class="movie-list-item-title">Oppenheimer</span>
+                        <p class="movie-list-item-desc">
+                            The story of American scientist, J. Robert Oppenheimer, and his role in the development of the atomic bomb.                        </p>
+                        <button class="movie-list-item-button">
+                            <a href="review">Review Now</a>
+                        </button>                     </div>
+
+                     <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="images/barbie.jpg" alt=""> 
+                        <span class="movie-list-item-title">Barbie</span>
+                        <p class="movie-list-item-desc">
+                            Barbie suffers a crisis that leads her to question her world and her existence.
+                        </p>
+                        <button class="movie-list-item-button">
+                            <a href="review">Review Now</a>
+                        </button>                     </div>
+
+                     <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="images/guardian.jpg" alt=""> 
+                        <span class="movie-list-item-title">Guardians of the Galaxy Vol. 3</span>
+                        <p class="movie-list-item-desc">
+                            Still reeling from the loss of Gamora, Peter Quill rallies his team to defend the universe and one of their own - a mission that could mean the end of the Guardians if not successful.                        </p>
+                        <button class="movie-list-item-button">
+                            <a href="review">Review Now</a>
+                        </button>                     </div>
+
+
+                </div>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </div>
+        </div>
+        </div>
+
+        <!-- <div class="feature-content"
+        style="background:linear-gradient(to bottom,rgba(0,0,0,0),#151515), url(images/f1.jpg)";>
+   
+        <img class="featured-title" src="images/ft1.png" alt="">
+        <p class="featured-desc">With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal plantation owner in Mississippi.</p>
+        <button class="featured-button">WATCH NOW   </button> -->
+    </div>  
+
+    </div>
+
+    <footer class="footer">
+        <p>Contact us: info@moviereviews.com</p>
+        <p>&copy; 2023 Movie Reviews. All rights reserved.</p>
+    </footer>
+
+</body> 
+
+</html>

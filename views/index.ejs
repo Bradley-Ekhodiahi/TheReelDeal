@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>The Reel Deal</title>
+</head>
+<body>
+    <div class="container">
+        <h1>The Reel Deal</h1>
+        <form id="reviewForm">
+            <label for="movieName">Movie Name:</label>
+            <input type="text" id="movieName" required aria-label="Enter the movie name">
+
+            <label for="userName">Your Name:</label>
+            <input type="text" id="userName" required aria-label="Enter your name">
+
+            <label for="reviewScore">Review Score (1-10):</label>
+            <input type="number" id="reviewScore" min="1" max="10" required aria-label="Enter the review score">
+
+            <label for="reviewText">Your Review:</label>
+            <textarea id="reviewText" required aria-label="Enter your review text"></textarea>
+
+            <button type="button" onclick="submitReview()">Submit Review</button>
+        </form>
+
+        <div id="reviews">
+            <!-- Reviews will be displayed here -->
+        </div>
+        <div id="loadingSpinner" class="hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
